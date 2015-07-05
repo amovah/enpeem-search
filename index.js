@@ -32,7 +32,7 @@ exports['default'] = function (pack) {
         result.description = $('' + BASE + ' div:nth-child(1) > p:nth-child(2)').text();
         result.stars = $('' + BASE + ' div:nth-child(1) > p:nth-child(3) > span:nth-child(1)').text();
         result.version = $('' + BASE + ' div:nth-child(1) > p:nth-child(3) > span:nth-child(2)').text().slice(1);
-        result.html_url = '' + URL + 'package/' + result.name;
+        result.url = '' + URL + 'package/' + result.name;
 
         return result;
       };
