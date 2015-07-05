@@ -1,12 +1,13 @@
-#enpeem-search
+# enpeem-search
 
 Search npm packages with web scraping and without indexing all npm packages
 
-##Usage
+## Usage
 
 `search(package_name [,limit [,offset]]).then(function(result){});`
 
-##Example
+## Example
+
 ```
 npm install enpeem-search
 
