@@ -1,3 +1,3 @@
 require('babel/register');
 
-exports = module.exports =  require('./search-npm');
+exports = module.exports =  require('./enpeem-search');
