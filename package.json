@@ -1,0 +1,30 @@
+{
+  "name": "enpeem-search",
+  "version": "0.1.0",
+  "description": "Search npm packages with web scraping and without indexing all npm packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amovah/enpeem-search.git"
+  },
+  "keywords": [
+    "npm",
+    "search",
+    "without",
+    "indexing"
+  ],
+  "author": "Ali Movahedi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amovah/enpeem-search/issues"
+  },
+  "homepage": "https://github.com/amovah/enpeem-search",
+  "dependencies": {
+    "babel": "^5.6.14",
+    "cheerio": "^0.19.0",
+    "request": "^2.58.0"
+  }
+}
