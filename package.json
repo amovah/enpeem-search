@@ -1,6 +1,6 @@
 {
   "name": "enpeem-search",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Search npm packages with web scraping and without indexing all npm packages",
   "main": "index.js",
   "scripts": {
