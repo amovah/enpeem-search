@@ -21,6 +21,6 @@ search('express').then(function(result) {
     description: 'Fast, unopinionated, minimalist web framework',
     stars: '947',
     version: '4.13.0',
-    html_url: 'https://www.npmjs.com/package/express' } ]
+    url: 'https://www.npmjs.com/package/express' } ]
 */
 ```

@@ -26,14 +26,12 @@ exports['default'] = function (pack) {
       var Data = function Data(index) {
         var BASE = '.search-results > li:nth-child(' + index + ') >';
         var result = {};
-
-        result.name = $('' + BASE + ' div:nth-child(1) > h3:nth-child(1) > a:nth-child(1)').attr('href').split('/')[2];
-        result.author = $('' + BASE + ' div:nth-child(1) > h3:nth-child(1) > a:nth-child(2)').attr('href').split('/~')[1];
-        result.description = $('' + BASE + ' div:nth-child(1) > p:nth-child(2)').text();
-        result.stars = $('' + BASE + ' div:nth-child(1) > p:nth-child(3) > span:nth-child(1)').text();
-        result.version = $('' + BASE + ' div:nth-child(1) > p:nth-child(3) > span:nth-child(2)').text().slice(1);
-        result.url = '' + URL + 'package/' + result.name;
-
+        result.name = $(BASE + ' div:nth-child(1) > h3:nth-child(1) > a:nth-child(1)').attr('href').split('/')[2];
+        result.author = $(BASE + ' div:nth-child(1) > h3:nth-child(1) > a:nth-child(2)').attr('href').split('/~')[1];
+        result.description = $(BASE + ' div:nth-child(1) > p:nth-child(2)').text();
+        result.stars = $(BASE + ' div:nth-child(1) > p:nth-child(3) > span:nth-child(1)').text();
+        result.version = $(BASE + ' div:nth-child(1) > p:nth-child(3) > span:nth-child(2)').text().slice(1);
+        result.url = URL + 'package/' + result.name;
         return result;
       };
       try {
@@ -44,7 +42,7 @@ exports['default'] = function (pack) {
         }
         resolve(result);
       } catch (e) {
-        reject(new Error('Package not found'));
+        reject([]);
       }
     });
   });
