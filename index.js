@@ -24,6 +24,7 @@ exports['default'] = function (pack) {
     (0, _request2['default'])(URL + METHOD, function (err, res, body) {
       var $ = _cheerio2['default'].load(body);
       var Data = function Data(index) {
+        if (!$('.search-results > li:nth-child(' + index + ')').text()) return;
         var BASE = '.search-results > li:nth-child(' + index + ') >';
         var result = {};
         result.name = $(BASE + ' div:nth-child(1) > h3:nth-child(1) > a:nth-child(1)').attr('href').split('/')[2];
@@ -49,3 +50,4 @@ exports['default'] = function (pack) {
 };
 
 module.exports = exports['default'];
+
