@@ -6,17 +6,45 @@ Search npm packages by web scraping and without indexing all npm packages
 
 It's good question. I used npm module to search packages, but npm first must indexing all packages then search. some of developers have problem with npm search. So I made a decision to create a module to search package without indexing all package. I use web scraping and site search to search packages.
 
+
+
+
+## Example
+
+First install the module : `npm install enpeem-search`. then :
+
+```javascript
+import search from 'eneepm-search';
+
+search('yo', 1, 2).then((result) => {
+  console.log(result);
+});
+
+/* result
+[ { name: 'yo-api-wrapper',
+    author: 'hinderberg',
+    description: 'Yo api wrapper for nodejs',
+    stars: '1',
+    version: '0.0.1',
+    url: 'https://www.npmjs.com/package/yo-api-wrapper' } ]
+*/
+
+search('some-thing-every-thing', 2).catch(() => {
+  console.log('Not found'); //'Not found'
+})
+
+```
 ## Usage
 
-`serach(pkg [[,limit] [,skip]]).then(callback).catch(callback);`
+`search(query [,limit] [,offset])`
 
-### pkg
+### query
 
 type: `String`
 
 required: Yes
 
-It is package name that you want to search for that.
+The search query.
 
 ### limit
 
@@ -26,9 +54,7 @@ required: No
 
 default: `1`
 
-The search result is limited. If you want more results than 1 result change it and increase it.
-
-Note: max value of this argument is 20 because there are only 20 results in a page.
+Limit result from 1 to 20.
 
 ### skip
 
@@ -38,21 +64,15 @@ required: No
 
 default: `0`
 
-This option, for example if option set to 3, skips 3 results and return result from 4th results.
+Skip the first `n` results.
 
-### then
+### result
 
-type: `Function`
+enpeem-search returns a [Promise](https://developer.mozilla.org/en-US/docs/Mozilla/JavaScript_code_modules/Promise.jsm/Promise).
 
-required: No
+result is a `Array` that includes results as `Object`.
 
-If there is a result or more you can get them with `then` method.
-
-#### callback(result)
-
-type of result: `Array`
-
-result includes objects of the results. The object includes:
+Object has:
 
 1. `name`: name of the package
 2. `author`: author of the package
@@ -60,18 +80,6 @@ result includes objects of the results. The object includes:
 4. `stars`: stars of the package
 5. `version`: version of the package
 6. `url`: URL of the package
-
-### catch
-
-type: `Function`
-
-required: No
-
-If there is no result for the package name, It has been called.
-
-#### callback()
-
-The callback have no argument.
 
 ## LICENSE
 
