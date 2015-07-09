@@ -2,7 +2,7 @@
 
 Search npm packages by web scraping and without indexing all npm packages
 
-## Why should we use this module??
+## Why should we use this module?
 
 Good question. I used npm module to search packages, but npm first must indexing all packages then search. some of developers have problem with npm search. So I made a decision to create a module to search package without indexing all package. I use web scraping and site search to search packages.
 
@@ -28,7 +28,7 @@ default: `1`
 
 The search result is limited. If you want more results than 1 result change it and increase it.
 
-Note: I use web scraping to search package. In a page of search result,  there is 20 results. So, the max limit value must be less or equal than `20 - offset`.
+Note: max value of this argument is 20 because there are only 20 results in a page.
 
 ### skip
 
@@ -67,13 +67,11 @@ type: `Function`
 
 required: No
 
-If there is no result for the package name, you can figure out this, with catch.
+If there is no result for the package name, It has been called.
 
-#### callback(result)
+#### callback()
 
-type: `null`
-
-result is null when there is no result.
+The callback have no argument.
 
 ## LICENSE
 
