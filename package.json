@@ -1,7 +1,7 @@
 {
   "name": "enpeem-search",
-  "version": "0.5.0",
-  "description": "Search npm packages with web scraping and without indexing all npm packages",
+  "version": "0.6.0",
+  "description": "Search npm packages by web scraping and without indexing all npm packages",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
