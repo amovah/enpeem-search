@@ -4,7 +4,7 @@ Search npm packages by web scraping and without indexing all npm packages
 
 ## Why should we use this module?
 
-Good question. I used npm module to search packages, but npm first must indexing all packages then search. some of developers have problem with npm search. So I made a decision to create a module to search package without indexing all package. I use web scraping and site search to search packages.
+It's good question. I used npm module to search packages, but npm first must indexing all packages then search. some of developers have problem with npm search. So I made a decision to create a module to search package without indexing all package. I use web scraping and site search to search packages.
 
 ## Usage
 
