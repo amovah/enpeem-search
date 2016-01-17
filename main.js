@@ -2,8 +2,8 @@ import request from 'request';
 import cheerio from 'cheerio';
 
 const enpeemSearch = (pack, limit = 1, skip = 0) => {
-  const URL = `https://www.npmjs.com/`;
-  const METHOD = `search?q=${pack}`;
+  const URL = `https://www.npmjs.com`;
+  const METHOD = `/search?q=${pack}`;
 
   return new Promise((resolve, reject) => {
     request(URL + METHOD, (err, res, body) => {
@@ -15,19 +15,13 @@ const enpeemSearch = (pack, limit = 1, skip = 0) => {
 
         if ($(base).length) {
           results.push({
-            name:  $(`${base} div:nth-child(1) > h3:nth-child(1) >
-            a:nth-child(1)`).attr('href').split('/')[2],
-            author:  $(`${base} div:nth-child(1) > h3:nth-child(1) >
-            a:nth-child(2)`).attr('href').split('/~')[1],
-            description:  $(`${base} div:nth-child(1) > p:nth-child(2)`).text(),
-            stars:  $(`${base} div:nth-child(1) > p:nth-child(3) >
-            span:nth-child(1)`).text(),
-            version: $(`${base} div:nth-child(1) > p:nth-child(3) >
-            span:nth-child(2)`).text().slice(1)
+            name:  $(`${base} .name`).text(),
+            author:  $(`${base} .author`).text(),
+            description:  $(`${base} .description`).text(),
+            stars:  $(`${base} .stars`).text(),
+            version: $(`${base} .version`).text().slice(1),
+            url: URL + $(`${base} .name`).attr('href')
           });
-
-          let item = results[results.length - 1];
-          item.url = `${URL}package/${item.name}`;
         }
 
         ++skip;
