@@ -36,7 +36,7 @@ search('some-thing-every-thing', 2).catch(() => {
 ```
 ## Usage
 
-`search(query [,limit] [,offset])`
+`search(query [,limit] [,skip])`
 
 ### query
 
