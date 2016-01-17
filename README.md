@@ -70,7 +70,7 @@ Skip the first `n` results.
 
 enpeem-search returns a [Promise](https://developer.mozilla.org/en-US/docs/Mozilla/JavaScript_code_modules/Promise.jsm/Promise).
 
-result is a `Array` that includes results as `Object`.
+result is a `Array` that includes result as `Object`.
 
 Object has:
 
@@ -80,6 +80,14 @@ Object has:
 4. `stars`: stars of the package
 5. `version`: version of the package
 6. `url`: URL of the package
+
+## Contributing, Idea, Issue
+
+Feel free to fill an issue or create a pull request, I'll check it ASAP.
+
+Just don't forgot build your code:
+
+`gulp build`
 
 ## LICENSE
 
